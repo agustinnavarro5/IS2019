@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/persistencia/Repositorio.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Credito.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Empleado.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/PlanCuotaAdelantada.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/test/Pruebas/PruebasClaseCredito.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Cliente.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/presentacion/presentadores/PAbonarCuota.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/PlanCuotaVencida.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Comprobante.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/presentacion/presentadores/PSolicitarCredito.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/EstadoCredito.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Financiera.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Cuota.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/LineaPago.java</file>
+            <file>file:/C:/Users/usuario/Documents/NetBeansProjects/FinancieraV2/src/financiera/dominio/Plan.java</file>
+        </group>
+    </open-files>
+</project-private>

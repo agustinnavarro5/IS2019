@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://ds.dyndns.org:9000/ServicioPublicoCredito?singleWsdl" uri="wsdl/ds.dyndns.org_9000/ServicioPublicoCredito.singlewsdl.wsdl"/>
+</catalog>
