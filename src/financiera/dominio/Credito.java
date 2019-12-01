@@ -68,7 +68,9 @@ public class Credito {
     public Cuota crearCuota(int nroCuota, double monto){
         return new Cuota(nroCuota,monto);
     }
-    
+     public Cuota crearCuota(int nroCuota, Date fechaCreacionCredito, double monto){
+        return new Cuota(nroCuota,fechaCreacionCredito,monto);
+    }
     public void actualizarEstado(){
         int cantidadCuotasImpagas = 0;
         int cantidadCuotasPagas = 0;

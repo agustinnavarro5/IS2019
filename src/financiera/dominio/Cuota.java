@@ -21,12 +21,12 @@ public class Cuota {
     //Asociaciones
     private Pago pago;
 
-    public Cuota(int nroCuota, Date fechaVencimiento, double montoTotal) {
+    public Cuota(int nroCuota, Date fechaCreacionCredito, double montoTotal) {
         this.nroCuota = nroCuota;
-        this.fechaVencimiento = fechaVencimiento;
         this.montoTotal = montoTotal;
         this.montoNeto = montoTotal;
         this.montoAdeudado = montoTotal;
+        this.fechaVencimiento = this.calcularFechaVencimiento(nroCuota, fechaCreacionCredito);
     }
 
     public Cuota(int nroCuota, double monto) {
@@ -34,7 +34,7 @@ public class Cuota {
         this.montoTotal = monto;
         this.montoNeto = monto;
         this.montoAdeudado = monto;
-        this.fechaVencimiento = this.calcularFechaVencimiento(nroCuota);
+        this.fechaVencimiento = this.calcularFechaVencimiento(nroCuota, new Date());
     }
 
     public Cuota() {
@@ -85,30 +85,34 @@ public class Cuota {
         this.pago = pago;
     }
 
-    public Date calcularFechaVencimiento(int nroCuota) {
-        Date fechaActual = new Date();
-        Date fechaVenc = fechaActual;
+    public Date calcularFechaVencimiento(int nroCuota, Date fechaCreacionCredito) {
+        Date fechaClon = new Date();
+        fechaClon.setDate(fechaCreacionCredito.getDate());
+        fechaClon.setMonth(fechaCreacionCredito.getMonth());
+        fechaClon.setYear(fechaCreacionCredito.getYear());
+        Date fechaVenc = new Date();
+        fechaVenc = fechaClon;
         fechaVenc.setDate(10);
-        if((fechaActual.getMonth()+1) == 13){
+        if((fechaClon.getMonth()+1) == 13){
             fechaVenc.setMonth(1);
-            fechaVenc.setYear(fechaActual.getYear()+1);
+            fechaVenc.setYear(fechaClon.getYear()+1);
         }else{
-        fechaVenc.setMonth(fechaActual.getMonth()+nroCuota);
-        fechaVenc.setYear(fechaActual.getYear());
+        fechaVenc.setMonth(fechaClon.getMonth()+nroCuota);
+        fechaVenc.setYear(fechaClon.getYear());
         }
         return fechaVenc;
     }
 
-    public void calcularTotal(Date ultimaFechaPago) {
+    public void calcularTotal(Date fechaPago,Date ultimaFechaPago) {
         int cantidadDiasUltimoPago = this.cantidadDias(ultimaFechaPago,this.fechaVencimiento);
         float porcentajeInteresDiario = Financiera.getInstance().getInteresDiario();
-        int cantidadDias = this.cantidadDias(new Date(),this.fechaVencimiento);
+        int cantidadDias = this.cantidadDias(fechaPago,this.fechaVencimiento);
         if((cantidadDias-cantidadDiasUltimoPago)>0){
              this.interes= porcentajeInteresDiario*this.montoAdeudado*(cantidadDias-cantidadDiasUltimoPago);
         }else{
               this.interes= 0;
         }
-            this.montoNeto = this.montoAdeudado+this.interes;
+        this.montoNeto = this.montoAdeudado+this.interes;
     }
 
     public int cantidadDias(Date fechaActual,Date ultimaFecha){
@@ -120,6 +124,7 @@ public class Cuota {
                       return 0;
                    }else{
                        cantidadDias =  fechaActual.getDate() - ultimaFecha.getDate();
+                       System.out.println("entrooooo");
                    }
             }else{
                 if(ultimaFecha.getMonth() < fechaActual.getMonth()){

@@ -98,10 +98,10 @@ public class Cliente {
                     if(cuo.getMontoAdeudado()!=0){
                         Date ultimaFechaPagoCuota = Repositorio.ultimaFechaPagoCuota(c.getNroCredito(),cuo.getNroCuota());
                         if(ultimaFechaPagoCuota!=null){
-                            cuo.calcularTotal(ultimaFechaPagoCuota);
+                            cuo.calcularTotal(new Date(),ultimaFechaPagoCuota);
                         }else{
                             //Se envia la fecha de vencimiento ya que la cuota no está incluída en ninguna línea de pago
-                            cuo.calcularTotal(cuo.getFechaVencimiento());
+                            cuo.calcularTotal(new Date(),cuo.getFechaVencimiento());
                         }
                     }
                 }

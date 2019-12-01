@@ -46,6 +46,7 @@ public class Pago {
             this.montoTotal+=l.getMonto();
         }
     }
+  
     //gets and setters
     public Empleado getEmpleado() {
         return empleado;
@@ -87,5 +88,5 @@ public class Pago {
         this.lineas = lineas;
     }
 
-    
+   
 }
